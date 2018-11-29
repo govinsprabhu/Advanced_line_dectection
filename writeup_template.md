@@ -97,7 +97,7 @@ Code for transformation can be found in the 5th cell of the notebook. I have fol
 
 In `find_lane_pixels(binary_warped)`  function, I am finding the line using a sliding window approach. Below is the brief summary of the algo
    * Find out the peak non-zero pixels using the histogram, for x coordinates
-   * Divide the image into two halves for left and right lanes
+   * Divide the image into two halves for left and right lanes, ignore some portion of left inorder to avoid the misidentification of divider as the line
    * Divide the image into different boxes according to y coordinates
    * In each box, find the non-zero pixels in the box for corresponding left and right side and add them to the list
    * Find all the x and y coordinates for left and the right side plane
