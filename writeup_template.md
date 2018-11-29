@@ -61,11 +61,11 @@ Below I have provided an example of original image and distortion corrected imag
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
 I used a combination of color and gradient thresholds to generate a binary image. In 3rd code cell in the notebook, you can find method  `gradient_color_transform`.  Below is the brief summary
-    * Converted the image to gray and 
-    * Applied Sobel transformation, with a threshold (20, 100) to get the sobel_x image
-    * Converted the image to HLS format, extracted the saturation part
-    * Applied the threshold (170, 255) to get the s_bianry part
-    * combined sobel_x and s_binary part to get the image
+
+  * Converted the image to gray and applied Sobel transformation, with a threshold (20, 100) to get the sobel_x image
+  * Converted the image to HLS format, extracted the saturation part
+  * Applied the threshold (170, 255) on the saturation part to get the s_bianry part
+  * combined sobel_x and s_binary part to get the image
  Below is the sample image as a result of the transformation
  
 ![alt text][image3]
@@ -85,7 +85,7 @@ In the notebook, 4th code cell, I have added function `transform(cur)` for apply
                       [970, 1],
                       [970, img_size[1] - 1]])
 ```
-Using `getPerspectiveTransform` function I got the perspective matrix, calculated `Minv` for later purpose. Transformed the image to using `cv2.warpPerspective` function.
+Using `getPerspectiveTransform` function I got the perspective matrix, also calculated `Minv` inverse perspective transformation for later purpose. Transformed the image to warped using `cv2.warpPerspective` function.
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
@@ -100,9 +100,9 @@ In `find_lane_pixels(binary_warped)`  function, I am finding the line using a sl
    * Divide the image into two halves for left and right lanes, ignore some portion of left inorder to avoid the misidentification of divider as the line
    * Divide the image into different boxes according to y coordinates
    * In each box, find the non-zero pixels in the box for corresponding left and right side and add them to the list
-   * Find all the x and y coordinates for left and the right side plane
+   * Find all the x and y coordinates for left and the right side plane from the list
 
-Second function `fit_polynomial(binary_warped)` uses the above method to get the pixels and fit it into the pixels. Brief steps
+Second function `fit_polynomial(binary_warped)` uses the above method to get the pixels and fit it into the line. Brief steps
    * Get the left and right x, y pixels from `find_lane_pixels(binary_warped)` method
    * Fit those in np.polyfill method to get the coefficients for the second-degree polynomial
    * Calculate the x coordinate using the coefficient and y (calculated using np.linespace method)
