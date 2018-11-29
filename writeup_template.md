@@ -155,4 +155,7 @@ Below are the problems which I found in my approach
    * When the lines are not visible properly due to the sunlight or shades of a tree, some time the algo fails to detect the line properly
    * when there is a significant variation in the color gradient (as we can see the challenge video), the algo misidentifying the color difference in the road surface as the lane.
    * When the roads are too curvy, and other objects are exist in the roads (as in the harder video), algo misses the lanes, so the mapping 
+   ##### What would you make it more robust
+   * Changing the sliding window method by storing previous coefficients value as long as, there is no much change in the curvature
+   * Make more robust filters to detect the lines under shades and differentiate it from other obstracles 
    
