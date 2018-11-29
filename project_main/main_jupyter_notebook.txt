@@ -1,0 +1,1 @@
+this folder contains the jupyter notebook. Refer project_advanced_line_dect.ipynb for notebook
