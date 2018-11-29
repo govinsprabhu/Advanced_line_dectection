@@ -26,9 +26,11 @@ The goals / steps of this project are the following:
 [image5]: ./output_images/warped_line_detected_box_method.png "Fit Visual"
 [image6]: ./output_images/final_image.jpg "Output"
 [video1]: ./output_images/project_video_output_final.mp4 "Video"
+[Notebook Link]: ./examples/example.ipynb "Notebook Link"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
 
+### All the codes are written in Jupyter note book, found in [Notebook Link]
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
 ---
@@ -43,7 +45,7 @@ You're reading it!
 
 #### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion-corrected calibration image.
 
-The code for this step is contained in the first code cell of the IPython notebook located in "./examples/example.ipynb" 
+The code for this step is contained in the first code cell of the IPython notebook located in [Notebook Link] 
 
 I start by preparing "object points (obj_points)", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `obj_points` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `img_points` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
 
@@ -120,7 +122,7 @@ Both the radius of curvature and position of the vehicle w.r.t center I have cal
       ym_per_pix = 30 / 720  # meters per pixel in y dimension
       xm_per_pix = 3.7 / 700  # meters per pixel in x dimension
      ```
-   *  Then using the equation given in the lesson, find the radius 
+   *  Then using the equation given in the lesson, find the radius for both left and right plane. Then took their mean for the final value
    
    Center of vehicle w.r.t lines center 
    * Found the bottom left and bottom right values of x coordinate of the lines using y_max value to get the line bottom
