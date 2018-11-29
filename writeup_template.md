@@ -140,7 +140,7 @@ The code for this is in the 6th code cell. ` transform_back_add_text` does the j
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](video1)
+Here's a [video1]
 
 ---
 
