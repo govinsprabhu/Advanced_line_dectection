@@ -25,7 +25,7 @@ The goals / steps of this project are the following:
 [image4]: ./output_images/warped_straight_lines_real2.png "Warp Example"
 [image5]: ./output_images/warped_line_detected_box_method.png "Fit Visual"
 [image6]: ./output_images/final_image.jpg "Output"
-[video1]: ./project_video.mp4 "Video"
+[video1]: ./output_images/project_video_output_final.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
 
@@ -140,7 +140,7 @@ The code for this is in the 6th code cell. ` transform_back_add_text` does the j
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](video1)
 
 ---
 
